@@ -1,6 +1,13 @@
 """
+================================================================================
 LLM Inference Profiler with AWQ Quantization Support
 Optimized for RTX 3080 (10GB VRAM)
+================================================================================
+Author: Ramesh Fernando
+Generated with: Claude Opus 4.5
+Description: Comprehensive profiling framework for evaluating inference latency
+             distribution across Large Language Models for edge case scenarios.
+================================================================================
 """
 
 import torch
@@ -76,7 +83,6 @@ def check_gpu():
     print(f"CUDA: {torch.version.cuda}")
     print(f"PyTorch: {torch.__version__}")
     
-    # Check for AWQ support
     try:
         from awq import AutoAWQForCausalLM
         print("AWQ: Supported")
@@ -92,7 +98,6 @@ def check_gpu():
 class AWQProfiler:
     """Profiler with AWQ quantization support"""
     
-    # Model configurations with AWQ variants
     MODEL_CONFIGS = {
         "OPT-1.3B": ModelConfig(
             name="OPT-1.3B",
